@@ -1,13 +1,23 @@
-import React from 'react';
-import { Provider } from 'react-redux'
-import './config/ReactotronConfig'
-import store from './store'
-import Routes from "./routes";
+import React, { Fragment } from 'react';
+import './config/ReactotronConfig';
 
-console.tron.log('testando');
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import { Provider } from 'react-redux';
+import store from './store';
+
+import Routes from './routes';
+
+import 'font-awesome/css/font-awesome.css';
+import './styles.css';
+
 const App = () => (
     <Provider store={store}>
-        <Routes/>
+        <Fragment>
+            <Routes />
+            <ToastContainer autoClose={5000} />
+        </Fragment>
     </Provider>
 );
 
